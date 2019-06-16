@@ -1,0 +1,19 @@
+{
+  "name": "major_p",
+  "version": "1.0.0",
+  "description": "TODO app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "First",
+    "Social",
+    "app"
+  ],
+  "author": "Yogesh Sharma",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
