@@ -1,0 +1,64 @@
+<html>
+    <head>
+        <title>
+            <%= locals.title %>
+        </title>
+        <style>
+        body{
+             text-align: center;
+        }
+        </style>
+        <script src="https://kit.fontawesome.com/35a525ecbe.js"></script>
+       <link rel="stylesheet" href="./home.css">
+    </head>
+    <body>
+        <div id="app">
+        <h1>TODO App</h1>
+        
+        <form action="/" method="POST">
+                <p>DESCRIPTION</p>
+                <input type="text" name="description" placeholder="What do you want to do?" required>
+                <div id="category">
+                <p>CATEGORY</p>
+                <select  id="select">
+                    <option value="default" name="category">Choose a category</option>
+                </select>
+                    <label for="" name="date">DUE DATE</label>
+                    <input type="date" name="date" id="date">
+                </div>
+                    <button type="submit"><i class="fas fa-plus"></i>ADD TASK</button>
+                    <BUtton type="submit"><i class="fas fa-trash-alt"></i>DELETE TASK </BUtton>
+                </form>
+                <div id="list_all">
+                    <ul>
+                            <% for(let i of LIST){%>
+                             <p><%= i.description %></p>
+                             <p><%= i.category %></p>
+                             <p><%= i.date %></p>
+                             
+                             
+                             <%}%>
+                         </ul>
+        
+        
+            </div>
+               
+
+        
+        
+        
+    </div>
+    <script>
+    var select = document.getElementById("select"),
+    arr = ["Personal","Work","School","Others"];
+    for (var i=0; i< arr.length; i++)
+    {
+        var option = document.createElement("option"),
+        txt = document.createTextNode(arr[i]);
+        option.appendChild(txt);
+        option.setAttribute("value",arr[i]);
+        select.insertBefore(option,select.lastChild);
+    }
+    </script>
+    </body>
+</html>
